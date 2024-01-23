@@ -10,6 +10,7 @@ const errorHandler = require("./middlewares/error");
 const notFoundHandler = require("./middlewares/notFound");
 
 const web = express();
+web.use(express.json());
 web.use(cors());
 
 web.use("/auth", authRoute);

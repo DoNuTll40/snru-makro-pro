@@ -1,6 +1,10 @@
 
 exports.register = (req, res, next) => {
-    res.json({message: "Register"});
+    const {email, password} = req.body;
+
+    // logic
+
+    res.json({email, password, message: "Register"});
 };
 
 exports.login = (req, res, next) => {
