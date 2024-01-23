@@ -8,17 +8,22 @@ exports.register = (req, res, next) => {
 };
 
 exports.login = (req, res, next) => {
-    res.json({message : "Login"});
+    const {email, password} = req.body;
+    res.json({ email, password });
 };
 
 exports.forgetPassword = (req, res, next) => {
-    res.json({message : "Forget Password"});
+    const {email} = req.body;
+    res.json({email});
 }
 
 exports.varifyForgetPassword = (req, res, next) => {
-    res.json({message : "Varify Forget Password"});
+    const { token } = req.params;
+    res.json({ token });
 }
 
 exports.resetPassword = (req, res, next) => {
-    res.json({message : "Reset Password"});
+    const { token } = req.params;
+    const { password } = req.body;
+    res.json({ token, password});
 }
