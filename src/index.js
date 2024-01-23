@@ -4,6 +4,7 @@ const express = require("express");
 const cors = require("cors");
 
 const authRoute = require("./routes/auth-route");
+const productRoute = require("./routes/product-route");
 
 const createError = require("./utils/createError")
 const errorHandler = require("./middlewares/error");
@@ -13,7 +14,9 @@ const web = express();
 web.use(express.json());
 web.use(cors());
 
+web.use("/", productRoute);
 web.use("/auth", authRoute);
+
 
 web.use(errorHandler);
 web.use("*", notFoundHandler)
