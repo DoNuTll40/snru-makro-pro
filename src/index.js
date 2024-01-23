@@ -14,7 +14,7 @@ const web = express();
 web.use(express.json());
 web.use(cors());
 
-web.use("/", productRoute);
+web.use("/product", productRoute);
 web.use("/auth", authRoute);
 
 

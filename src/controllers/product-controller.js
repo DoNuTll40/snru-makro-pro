@@ -8,5 +8,6 @@ exports.getProducts = (req, res, next) => {
 };
 
 exports.getProductById = (req, res, next) => {
-    res.json({message : "Get Product By Id"});
+    const proId = req.params;
+    res.json({proId, message : "Get Product By Id"});
 };
