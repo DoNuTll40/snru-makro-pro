@@ -6,8 +6,8 @@ const cors = require("cors");
 const authRoute = require("./routes/auth-route");
 
 const createError = require("./utils/createError")
-const errorHandler = require("./middleware/error");
-const notFoundHandler = require("./middleware/notFound");
+const errorHandler = require("./middlewares/error");
+const notFoundHandler = require("./middlewares/notFound");
 
 const web = express();
 web.use(cors());
